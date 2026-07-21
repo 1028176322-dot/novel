@@ -38,8 +38,8 @@
 - 旧种子索引（IDX_FORESHADOW/CHARACTER/SETTING 仅示范 5 章版）：其中 FB-007/FB-008/FB-009/FB-010 描述与 v2 大纲不符、苏墨凝首现章误记为第010章，已全量重建覆盖。
 
 ## 记忆 / 技能路径
-- 活动记忆根：`D:/个人/.workbuddy/memory/`（唯一）。
-- 技能 `novel-write` / `outline-design` 项目路径已修正为 `D:/个人/小说_道法百年/`。
+- 活动记忆根：各机本地 `<各机用户目录>/.workbuddy/memory/`（各机路径不同，不随仓库迁移）。
+- 技能 `novel-chapter-write` 位于仓库 `.workbuddy/skills/`（项目内，随仓库迁移）；`outline-design` 同。
 - 历史 daily memory 中的 `E:/个人/...` 为 legacy 引用，按方法论 12.11 不修改。
 
 ## 变更记录
