@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 logic_check.py — 《道士也玩火力覆盖》章节正文·机械逻辑校验
@@ -128,7 +128,7 @@ def parse_dead_chars(char_text):
     禁复活/已死标记的行（取每行首列角色名），两者取并集。"""
     # 硬编码已知 canon（稳定，若禁复活名单变更须同步此行）
     strong = ["萧沛"]  # 禁复活，仅余党裴琰承线出场
-    mention = ["沈括", "黑虎帮二当家", "漕帮赵管事", "钱万山"]
+    mention = ["沈括", "黑虎帮二当家", "漕帮赵管事"]
     # 动态：扫描 IDX_CHARACTER 表格行，首列为角色名
     for line in char_text.splitlines():
         if not line.strip().startswith("|"):
