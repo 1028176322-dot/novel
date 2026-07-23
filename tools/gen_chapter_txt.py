@@ -11,9 +11,10 @@
 
 用法：
   python gen_chapter_txt.py \\
-      --src "e:/个人/小说_道法百年/第一卷_道生" \\
-      --dst "e:/个人/小说_道法百年/txt/第一卷_道生" \\
+      --src "<仓库根>/第一卷_道生" \\
+      --dst "<仓库根>/txt/第一卷_道生" \\
       [--range 81-100] [--glob "第*章_*.md"] [--overwrite] [--dry-run]
+  （--src/--dst 默认值基于脚本位置自动推导仓库根，跨盘可直接运行，无需传参）
 
 参数：
   --src       源目录（含章节 md），默认第一卷_道生
@@ -125,11 +126,12 @@ def build_txt(num: int, name: str, paras: list) -> str:
 
 
 def main():
+    repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     parser = argparse.ArgumentParser(description="章节 md 转纯净 txt 通用脚本")
-    parser.add_argument("--src", default=r"e:/个人/小说_道法百年/第一卷_道生",
-                        help="源目录（含章节 md）")
-    parser.add_argument("--dst", default=r"e:/个人/小说_道法百年/txt/第一卷_道生",
-                        help="输出目录（txt）")
+    parser.add_argument("--src", default=os.path.join(repo, "第一卷_道生"),
+                        help="源目录（含章节 md），默认基于仓库根自动推导")
+    parser.add_argument("--dst", default=os.path.join(repo, "txt", "第一卷_道生"),
+                        help="输出目录（txt），默认基于仓库根自动推导")
     parser.add_argument("--glob", default="第*章_*.md", help="文件名匹配模式")
     parser.add_argument("--range", default=None, help="章号区间，如 81-100")
     parser.add_argument("--overwrite", action="store_true", help="覆盖已存在的 txt")
